@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { StyleSheet, TouchableHighlight, View, Text } from 'react-native';
+import { StyleSheet, TouchableOpacity, View, Text } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';  
 
 import { Cores } from '../../assets/Cores';
 import { Icones } from '../../assets/Icones';
 
 const Categorias = () => {
+
+  const [ativa, setAtiva] = useState("Sangue");
 
   return (
 
@@ -14,21 +16,31 @@ const Categorias = () => {
       <View style={styles.containerBotoes}>
 
         
-        <TouchableHighlight style={[styles.botoesCategoria, {backgroundColor: Cores.sangueSelecionado, borderColor: Cores.sangue}]}>
+        <TouchableOpacity 
+          onPress={() => setAtiva("Sangue")} 
+          style={[styles.botoesCategoria, {backgroundColor: ativa === "Sangue"? Cores.sangueSelecionado : Cores.branco, borderColor: Cores.sangue}]}>
+
           <MaterialCommunityIcons name={Icones.sangue} size={40} color={Cores.sangue} />
-        </TouchableHighlight>
         
-        <TouchableHighlight style={[styles.botoesCategoria, {backgroundColor: Cores.branco, borderColor: Cores.dor}]}>
+        </TouchableOpacity>
+        
+        <TouchableOpacity 
+          onPress={() => setAtiva("Dor")} 
+          style={[styles.botoesCategoria, {backgroundColor: ativa === "Dor"? Cores.dorSelecionado : Cores.branco, borderColor: Cores.dor} ]}>
+        
           <MaterialCommunityIcons name={Icones.dor} size={40} color={Cores.dor} />
-        </TouchableHighlight>
         
-        <TouchableHighlight style={[styles.botoesCategoria, {backgroundColor: Cores.branco, borderColor: Cores.humor}]}>
+        </TouchableOpacity>
+        
+        <TouchableOpacity
+          onPress={() => setAtiva("Humor")}
+          style={[styles.botoesCategoria, {backgroundColor: ativa === "Humor"? Cores.humorSelecionado : Cores.branco, borderColor: Cores.humor}]}>
           <MaterialCommunityIcons name={Icones.humor} size={40} color={Cores.humor} />
-        </TouchableHighlight>
+        </TouchableOpacity>
       </View>
         
       {/* alterar esse texto baseado na categoria selecionada */}
-      <Text style={styles.labelCategoria}>Sangramento</Text>
+      <Text style={styles.labelCategoria}>{ativa}</Text>
     </View>
   )
 };
