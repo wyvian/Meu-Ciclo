@@ -6,8 +6,7 @@ import { Cores } from '../../assets/Cores';
 
 const Opcao = ({cor, tamanho, icone}) => {
 
-  const [corFundo, setCorFundo] = useState('');
-
+  const [corFundo, setCorFundo] = useState(Cores.branco);
   const [corIcone, setCorIcone] = useState(cor);
 
   function preencher () {
@@ -22,9 +21,7 @@ const Opcao = ({cor, tamanho, icone}) => {
 
   return (
     <TouchableOpacity 
-      style={[
-        styles.opcoes(cor), 
-        {backgroundColor: corFundo}]} 
+      style={[styles.opcoes(cor), {backgroundColor: corFundo}]} 
       onPress={preencher}>
       <MaterialCommunityIcons name={icone} size={tamanho} color={corIcone} />
     </TouchableOpacity>

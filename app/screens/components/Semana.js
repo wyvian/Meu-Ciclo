@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { Cores } from '../../assets/Cores';
 import Dia from './Dia';
 
 const diasSemana = ['D','S','T','Q','Q','S','S'];
@@ -24,9 +23,6 @@ const Semana = ({primeiraData}) => {
   }
   
   const semana = gerarDias();
-
-  console.log(semana);
-
 
   return (
     <View style={styles.semana} elevation={5}>
