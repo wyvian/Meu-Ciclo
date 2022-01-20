@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';  
 
-import { Cores } from './Cores';
+import { Cores } from '../../assets/Cores';
 
 const Opcao = ({cor, tamanho, icone}) => {
 

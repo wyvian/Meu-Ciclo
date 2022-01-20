@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { Cores } from './Cores';
+import { Cores } from '../../assets/Cores';
 import Dia from './Dia';
 
 const diasSemana = ['D','S','T','Q','Q','S','S'];

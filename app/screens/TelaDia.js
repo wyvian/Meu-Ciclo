@@ -9,9 +9,10 @@ import {
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';  
 
-import { Cores } from './components/Cores';
+import { Cores } from '../assets/Cores';
 import OpcaoContainer from './components/OpcaoContainer';
 import Semana from './components/Semana';
+import { Icones } from '../assets/Icones';
 
 function TelaDia() {
   return (
@@ -20,15 +21,16 @@ function TelaDia() {
       <Semana primeiraData={15}/>
       
       <View style={styles.categoriaContainer}>
+
         <View style={styles.botoesCategoria}>
           <TouchableHighlight style={[styles.categoria, {backgroundColor: Cores.sangueSelecionado, borderColor: Cores.sangue}]}>
-            <MaterialCommunityIcons name="water" size={40} color={Cores.sangue} />
+            <MaterialCommunityIcons name={Icones.sangue} size={40} color={Cores.sangue} />
           </TouchableHighlight>
           <TouchableHighlight style={[styles.categoria, {borderColor: Cores.dor}]}>
-            <MaterialCommunityIcons name="lightning-bolt" size={40} color={Cores.dor} />
+            <MaterialCommunityIcons name={Icones.dor} size={40} color={Cores.dor} />
           </TouchableHighlight>
           <TouchableHighlight style={[styles.categoria, {borderColor: Cores.humor}]}>
-            <MaterialCommunityIcons name="tag-faces" size={40} color={Cores.humor} />
+            <MaterialCommunityIcons name={Icones.humor} size={40} color={Cores.humor} />
           </TouchableHighlight>
         </View>
         
@@ -36,7 +38,7 @@ function TelaDia() {
         <Text style={styles.labelCategoria}>Sangramento</Text>
       </View>
 
-      <OpcaoContainer icone={"lightning-bolt"} cor={Cores.dor}/>
+      <OpcaoContainer icone={Icones.dor} cor={Cores.dor}/>
       
     </SafeAreaView>
   );
