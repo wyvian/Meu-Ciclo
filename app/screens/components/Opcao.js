@@ -42,12 +42,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     margin: 20,
-    backgroundColor: Cores.branco,
   }),
   labelOpcao: {
     fontSize: 15,
     fontFamily: 'monospace',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: Cores.preto,
   }
 })
 

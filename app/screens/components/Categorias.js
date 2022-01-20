@@ -5,41 +5,46 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Cores } from '../../assets/Cores';
 import { Icones } from '../../assets/Icones';
 
+import OpcaoContainer from './OpcaoContainer';
+var opcoes = {};
 const Categorias = () => {
 
   const [ativa, setAtiva] = useState("Fluxo");
 
   return (
+    <View>
+      <View style={styles.container}>
 
-    <View style={styles.container}>
+        <View style={styles.containerBotoes}>
 
-      <View style={styles.containerBotoes}>
+          <TouchableOpacity 
+            onPress={() => setAtiva("Fluxo")}
+            style={[styles.botoesCategoria, {backgroundColor: ativa === "Fluxo"? Cores.sangueSelecionado : Cores.branco, borderColor: Cores.sangue}]}>
 
-        
-        <TouchableOpacity 
-          onPress={() => setAtiva("Fluxo")} 
-          style={[styles.botoesCategoria, {backgroundColor: ativa === "Fluxo"? Cores.sangueSelecionado : Cores.branco, borderColor: Cores.sangue}]}>
-
-          <MaterialCommunityIcons name={Icones.sangue} size={40} color={Cores.sangue} />
-        
-        </TouchableOpacity>
-        
-        <TouchableOpacity 
-          onPress={() => setAtiva("Dor")} 
-          style={[styles.botoesCategoria, {backgroundColor: ativa === "Dor"? Cores.dorSelecionado : Cores.branco, borderColor: Cores.dor} ]}>
-        
-          <MaterialCommunityIcons name={Icones.dor} size={40} color={Cores.dor} />
-        
-        </TouchableOpacity>
-        
-        <TouchableOpacity
-          onPress={() => setAtiva("TPM")}
-          style={[styles.botoesCategoria, {backgroundColor: ativa === "TPM"? Cores.tpmSelecionado : Cores.branco, borderColor: Cores.tpm}]}>
-          <MaterialCommunityIcons name={Icones.tpm} size={40} color={Cores.tpm} />
-        </TouchableOpacity>
+            <MaterialCommunityIcons name={Icones.sangue} size={40} color={Cores.sangue} />
+          
+          </TouchableOpacity>
+          
+          <TouchableOpacity 
+            onPress={() => setAtiva("Dor")} 
+            style={[styles.botoesCategoria, {backgroundColor: ativa === "Dor"? Cores.dorSelecionado : Cores.branco, borderColor: Cores.dor} ]}>
+          
+            <MaterialCommunityIcons name={Icones.dor} size={40} color={Cores.dor} />
+          
+          </TouchableOpacity>
+          
+          <TouchableOpacity
+            onPress={() => setAtiva("TPM")} 
+            style={[styles.botoesCategoria, {backgroundColor: ativa === "TPM"? Cores.tpmSelecionado : Cores.branco, borderColor: Cores.tpm}]}>
+            <MaterialCommunityIcons name={Icones.tpm} size={40} color={Cores.tpm} />
+          </TouchableOpacity>
+        </View>
+          
+        <Text style={styles.labelCategoria}>{ativa}</Text>
       </View>
-        
-      <Text style={styles.labelCategoria}>{ativa}</Text>
+
+      <OpcaoContainer icone={Icones.sangue} cor={Cores.sangue}/>
+
     </View>
   )
 };

@@ -1,9 +1,8 @@
 import { StyleSheet, SafeAreaView } from 'react-native';
 
 import { Cores } from '../assets/Cores';
-import { Icones } from '../assets/Icones';
+
 import Categorias from './components/Categorias';
-import OpcaoContainer from './components/OpcaoContainer';
 import Semana from './components/Semana';
 
 function TelaDia() {
@@ -13,8 +12,6 @@ function TelaDia() {
       <Semana primeiraData={15}/>
       
       <Categorias/>
-
-      <OpcaoContainer icone={Icones.dor} cor={Cores.dor}/>
       
     </SafeAreaView>
   );
