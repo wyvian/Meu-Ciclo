@@ -7,7 +7,7 @@ import { Icones } from '../../assets/Icones';
 
 const Categorias = () => {
 
-  const [ativa, setAtiva] = useState("Sangue");
+  const [ativa, setAtiva] = useState("Fluxo");
 
   return (
 
@@ -17,8 +17,8 @@ const Categorias = () => {
 
         
         <TouchableOpacity 
-          onPress={() => setAtiva("Sangue")} 
-          style={[styles.botoesCategoria, {backgroundColor: ativa === "Sangue"? Cores.sangueSelecionado : Cores.branco, borderColor: Cores.sangue}]}>
+          onPress={() => setAtiva("Fluxo")} 
+          style={[styles.botoesCategoria, {backgroundColor: ativa === "Fluxo"? Cores.sangueSelecionado : Cores.branco, borderColor: Cores.sangue}]}>
 
           <MaterialCommunityIcons name={Icones.sangue} size={40} color={Cores.sangue} />
         
@@ -33,13 +33,12 @@ const Categorias = () => {
         </TouchableOpacity>
         
         <TouchableOpacity
-          onPress={() => setAtiva("Humor")}
-          style={[styles.botoesCategoria, {backgroundColor: ativa === "Humor"? Cores.humorSelecionado : Cores.branco, borderColor: Cores.humor}]}>
-          <MaterialCommunityIcons name={Icones.humor} size={40} color={Cores.humor} />
+          onPress={() => setAtiva("TPM")}
+          style={[styles.botoesCategoria, {backgroundColor: ativa === "TPM"? Cores.tpmSelecionado : Cores.branco, borderColor: Cores.tpm}]}>
+          <MaterialCommunityIcons name={Icones.tpm} size={40} color={Cores.tpm} />
         </TouchableOpacity>
       </View>
         
-      {/* alterar esse texto baseado na categoria selecionada */}
       <Text style={styles.labelCategoria}>{ativa}</Text>
     </View>
   )

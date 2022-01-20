@@ -5,12 +5,13 @@ import Opcao from './Opcao';
 
 const OpcaoContainer = ({cor, icone}) => {
   const tamanhos = [];
+  const niveis = ["Fraca", "Moderada", "Forte", "Intensa"]
 
   for(let i = 1; i <= 4; i++){
     tamanhos.push(
       {
-        id: i, 
-        valor: (i*20 + 20)
+        id: niveis[i - 1],
+        valor: (i*20 + 20), 
       }
     )
   }
@@ -22,7 +23,8 @@ const OpcaoContainer = ({cor, icone}) => {
           key={item.id} 
           cor={cor} 
           tamanho={item.valor} 
-          icone={icone}/>
+          icone={icone}
+          nivel={item.id}/>
       })}
     </View>
   )
