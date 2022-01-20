@@ -36,7 +36,7 @@ function TelaDia() {
         <Text style={styles.labelCategoria}>Sangramento</Text>
       </View>
 
-      <OpcaoContainer icone={"water"} cor={Cores.sangue} />
+      <OpcaoContainer icone={"lightning-bolt"} cor={Cores.dor}/>
       
     </SafeAreaView>
   );

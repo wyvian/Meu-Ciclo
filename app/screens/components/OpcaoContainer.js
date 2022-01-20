@@ -3,11 +3,11 @@ import { StyleSheet, View } from 'react-native';
 
 import Opcao from './Opcao';
 
-var i = 1;
+
 const tamanhos = [];
 const OpcaoContainer = ({cor, icone}) => {
   
-  for(i; i <= 4; i++){
+  for(let i = 1; i <= 4; i++){
     tamanhos.push(
       {
         id: i, 
@@ -16,12 +16,16 @@ const OpcaoContainer = ({cor, icone}) => {
     )
   }
 
-  //console.log(tamanhos);
+  //\\\\\console.log(tamanhos);
 
   return (
     <View style={styles.opcoesContainer}>
       {tamanhos.map((item) => {
-        return <Opcao key={item.id} cor={cor} tamanho={item.valor} icone={icone}/>
+        return <Opcao 
+          key={item.id} 
+          cor={cor} 
+          tamanho={item.valor} 
+          icone={icone}/>
       })}
     </View>
   )
