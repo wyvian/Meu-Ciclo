@@ -6,8 +6,6 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Cores } from '../../assets/Cores';
 import { Icones } from '../../assets/Icones';
 
-import OpcaoContainer from './OpcaoContainer';
-var opcoes = {};
 const Categorias = () => {
 
   const [ativa, setAtiva] = useState("");

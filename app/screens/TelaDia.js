@@ -5,6 +5,7 @@ import { Cores } from '../assets/Cores';
 
 import Categorias from './components/Categorias';
 import Semana from './components/Semana';
+import TelaMensal from './TelaMensal';
 
 function TelaDia() {
 
