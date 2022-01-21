@@ -8,14 +8,14 @@ import Semana from './components/Semana';
 
 function TelaDia({route}) {
 
-  const data = new Date(route.params);
+  const data = new Date(route.params.dateString);
 
   return (
     <SafeAreaView style={styles.background}>
       
-      <Semana primeiraData={(data.getUTCDate() - data.getUTCDay())}/>
+      <Semana primeiraData={(data.getUTCDate() - data.getUTCDay())} dataSelecionada={data.getUTCDate()} />
       
-      <Categorias/>
+      <Categorias data={data}/>
       
     </SafeAreaView>
   );

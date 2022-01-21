@@ -2,13 +2,18 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Cores } from '../../assets/Cores';
 
-const Dia = ({diaSemana, dataMes}) => {
+const Dia = ({diaSemana, dataMes, selecionada}) => {
+
   return (
     <View style={styles.diaContainer}>
       <Text style={styles.dia_letra}>{diaSemana}</Text>
       
-      <View style={styles.dataContainer}>
-        <Text style={styles.data_num}>{dataMes}</Text>
+      <View style={
+        [
+          styles.dataContainer, 
+          {backgroundColor: (selecionada === true) ? Cores.diaSelecionado : Cores.cinza,}
+        ]}>
+        <Text style={[{color: (selecionada === true) ? Cores.branco : Cores.preto,}]}>{dataMes}</Text>
       </View>
 
     </View>
@@ -25,19 +30,17 @@ const styles = StyleSheet.create({
   },
   dia_letra: {
     padding: 2,
+    color: Cores.preto,
   },
   dataContainer: {
     width: '100%',
     height: 45,
-    backgroundColor: Cores.cinza,
-    borderRadius: 5,
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end'
+    borderRadius: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   data_num: {
-    position: 'absolute',
-    bottom: 2,
-    right: 6,
+    
   }
 })
 

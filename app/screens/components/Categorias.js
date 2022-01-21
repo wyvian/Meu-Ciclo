@@ -6,7 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Cores } from '../../assets/Cores';
 import { Icones } from '../../assets/Icones';
 
-const Categorias = () => {
+const Categorias = ({data}) => { //recebe objeto Date
 
   const [ativa, setAtiva] = useState("");
   const navigation = useNavigation();
@@ -18,7 +18,7 @@ const Categorias = () => {
         <View style={styles.containerBotoes}>
 
           <TouchableOpacity 
-            onPress={() => {setAtiva("Fluxo"), navigation.navigate('Fluxo')}}
+            onPress={() => {setAtiva("Fluxo"), navigation.navigate('Fluxo', data)}}
             style={[styles.botoesCategoria, {backgroundColor: ativa === "Fluxo"? Cores.sangueSelecionado : Cores.branco, borderColor: Cores.sangue}]}>
 
             <MaterialCommunityIcons name={Icones.sangue} size={60} color={Cores.sangue} />
@@ -28,7 +28,7 @@ const Categorias = () => {
           <Text style={styles.labelCategoria}>Fluxo</Text>
           
           <TouchableOpacity 
-            onPress={() => {setAtiva("Dor"), navigation.navigate('Dor')}} 
+            onPress={() => {setAtiva("Dor"), navigation.navigate('Dor', data)}} 
             style={[styles.botoesCategoria, {backgroundColor: ativa === "Dor"? Cores.dorSelecionado : Cores.branco, borderColor: Cores.dor} ]}>
           
             <MaterialCommunityIcons name={Icones.dor} size={60} color={Cores.dor} />
@@ -38,7 +38,7 @@ const Categorias = () => {
           <Text style={styles.labelCategoria}>Dor</Text>
           
           <TouchableOpacity
-            onPress={() => {setAtiva("TPM"), navigation.navigate('TPM')}} 
+            onPress={() => {setAtiva("TPM"), navigation.navigate('TPM', data)}} 
             style={[styles.botoesCategoria, {backgroundColor: ativa === "TPM"? Cores.tpmSelecionado : Cores.branco, borderColor: Cores.tpm}]}>
             <MaterialCommunityIcons name={Icones.tpm} size={60} color={Cores.tpm} />
           </TouchableOpacity>
@@ -48,8 +48,6 @@ const Categorias = () => {
           
         
       </View>
-
-      {/* <OpcaoContainer icone={Icones.sangue} cor={Cores.sangue}/> */}
 
     </View>
   )

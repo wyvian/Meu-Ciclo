@@ -7,11 +7,11 @@ import { Icones } from '../assets/Icones';
 import Semana from './components/Semana';
 import OpcaoContainer from './components/OpcaoContainer';
 
-function TelaFluxo() {
+function TelaFluxo({route}) {
   return (
     <SafeAreaView style={styles.background}>
       
-      <Semana primeiraData={15}/>
+      <Semana primeiraData={(route.params.getUTCDate() - route.params.getUTCDay())} dataSelecionada={route.params.getUTCDate()} />
 
       <Text style={styles.titulo}>Fluxo</Text>
       

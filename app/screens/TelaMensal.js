@@ -4,7 +4,7 @@ import { CalendarList } from "react-native-calendars";
 import { SafeAreaView } from 'react-native';
 
 
-function TelaMensal(props) {
+function TelaMensal() {
   
   const navigaion = useNavigation();
   
@@ -21,7 +21,7 @@ function TelaMensal(props) {
         scrollEnabled={true}
         // Enable or disable vertical scroll indicator. Default = false
         showScrollIndicator={true}
-        onDayPress={(day) => {navigaion.navigate('Dia', day.dateString)}}
+        onDayPress={(day) => {navigaion.navigate('Dia', day)}}
       />
   </SafeAreaView>
   );
