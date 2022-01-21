@@ -21,8 +21,7 @@ function TelaMensal(props) {
         scrollEnabled={true}
         // Enable or disable vertical scroll indicator. Default = false
         showScrollIndicator={true}
-
-        onDayPress={(day) => {navigaion.navigate('Dia'), console.log(day)}}
+        onDayPress={(day) => {navigaion.navigate('Dia', day.dateString)}}
       />
   </SafeAreaView>
   );

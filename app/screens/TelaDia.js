@@ -5,14 +5,15 @@ import { Cores } from '../assets/Cores';
 
 import Categorias from './components/Categorias';
 import Semana from './components/Semana';
-import TelaMensal from './TelaMensal';
 
-function TelaDia() {
+function TelaDia({route}) {
+
+  const data = new Date(route.params);
 
   return (
     <SafeAreaView style={styles.background}>
       
-      <Semana primeiraData={15}/>
+      <Semana primeiraData={(data.getUTCDate() - data.getUTCDay())}/>
       
       <Categorias/>
       
