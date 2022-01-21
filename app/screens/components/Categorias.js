@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, TouchableOpacity, View, Text } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';  
 
@@ -9,7 +10,8 @@ import OpcaoContainer from './OpcaoContainer';
 var opcoes = {};
 const Categorias = () => {
 
-  const [ativa, setAtiva] = useState("Fluxo");
+  const [ativa, setAtiva] = useState("");
+  const navigation = useNavigation();
 
   return (
     <View>
@@ -18,32 +20,38 @@ const Categorias = () => {
         <View style={styles.containerBotoes}>
 
           <TouchableOpacity 
-            onPress={() => setAtiva("Fluxo")}
+            onPress={() => {setAtiva("Fluxo"), navigation.navigate('Fluxo')}}
             style={[styles.botoesCategoria, {backgroundColor: ativa === "Fluxo"? Cores.sangueSelecionado : Cores.branco, borderColor: Cores.sangue}]}>
 
-            <MaterialCommunityIcons name={Icones.sangue} size={40} color={Cores.sangue} />
+            <MaterialCommunityIcons name={Icones.sangue} size={60} color={Cores.sangue} />
           
           </TouchableOpacity>
+
+          <Text style={styles.labelCategoria}>Fluxo</Text>
           
           <TouchableOpacity 
-            onPress={() => setAtiva("Dor")} 
+            onPress={() => {setAtiva("Dor"), navigation.navigate('Dor')}} 
             style={[styles.botoesCategoria, {backgroundColor: ativa === "Dor"? Cores.dorSelecionado : Cores.branco, borderColor: Cores.dor} ]}>
           
-            <MaterialCommunityIcons name={Icones.dor} size={40} color={Cores.dor} />
+            <MaterialCommunityIcons name={Icones.dor} size={60} color={Cores.dor} />
           
           </TouchableOpacity>
+
+          <Text style={styles.labelCategoria}>Dor</Text>
           
           <TouchableOpacity
-            onPress={() => setAtiva("TPM")} 
+            onPress={() => {setAtiva("TPM"), navigation.navigate('TPM')}} 
             style={[styles.botoesCategoria, {backgroundColor: ativa === "TPM"? Cores.tpmSelecionado : Cores.branco, borderColor: Cores.tpm}]}>
-            <MaterialCommunityIcons name={Icones.tpm} size={40} color={Cores.tpm} />
+            <MaterialCommunityIcons name={Icones.tpm} size={60} color={Cores.tpm} />
           </TouchableOpacity>
+
+          <Text style={styles.labelCategoria}>TPM</Text>
         </View>
           
-        <Text style={styles.labelCategoria}>{ativa}</Text>
+        
       </View>
 
-      <OpcaoContainer icone={Icones.sangue} cor={Cores.sangue}/>
+      {/* <OpcaoContainer icone={Icones.sangue} cor={Cores.sangue}/> */}
 
     </View>
   )
@@ -53,31 +61,33 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     width: '100%',
+    height: '92%',
     alignItems: 'center',
+    justifyContent: 'center',
     //backgroundColor: Cores.preto,
   },
   containerBotoes: {
     width: '100%',
-    alignItems: 'flex-end',
-    flexDirection: 'row',
+    alignItems: 'center',
+    flexDirection: 'column',
     justifyContent: 'space-evenly',
-    //backgroundColor: "red",
+    //backgroundColor: "lightcoral",
   },
   botoesCategoria: {
     backgroundColor: 'white',
-    width: 90,
-    height: 90,
-    borderWidth: 5,
-    borderRadius: 100,
+    width: 170,
+    height: 120,
+    borderRadius: 70,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 20,
-    marginTop: 20,
+    marginBottom: 10,
+    marginTop: 25,
   },
   labelCategoria: {
     fontSize: 25,
     fontWeight: 'bold',
-    margin: 10,
+    fontFamily: 'Roboto',
+    letterSpacing: 2,
     color: Cores.preto,
     //backgroundColor: Cores.diaSelecionado,
   },

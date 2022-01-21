@@ -8,5 +8,5 @@ export const Cores = {
   diaSelecionado: '#4B2840',
   branco: '#FFFFFF',
   cinza: '#F5F5F5',
-  preto: '#525252'
+  preto: '#707070'
 }

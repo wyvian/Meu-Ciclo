@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { StyleSheet, SafeAreaView } from 'react-native';
 
 import { Cores } from '../assets/Cores';
@@ -6,6 +7,7 @@ import Categorias from './components/Categorias';
 import Semana from './components/Semana';
 
 function TelaDia() {
+
   return (
     <SafeAreaView style={styles.background}>
       

@@ -38,7 +38,7 @@ const Semana = ({primeiraData}) => {
 const styles = StyleSheet.create({
   semana: {
     width: '100%',
-    height: 175,
+    height: 100,
     backgroundColor: 'white',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
