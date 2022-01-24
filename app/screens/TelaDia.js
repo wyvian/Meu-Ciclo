@@ -15,7 +15,7 @@ function TelaDia({route}) {
       
       <Semana primeiraData={(data.getUTCDate() - data.getUTCDay())} dataSelecionada={data.getUTCDate()} />
       
-      <Categorias data={data}/>
+      <Categorias dataString={route.params.dateString}/>
       
     </SafeAreaView>
   );

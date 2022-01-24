@@ -8,14 +8,17 @@ import Semana from './components/Semana';
 import OpcaoContainer from './components/OpcaoContainer';
 
 function TelaFluxo({route}) {
+
+  const data = new Date(route.params);
+
   return (
     <SafeAreaView style={styles.background}>
       
-      <Semana primeiraData={(route.params.getUTCDate() - route.params.getUTCDay())} dataSelecionada={route.params.getUTCDate()} />
+      <Semana primeiraData={(data.getUTCDate() - data.getUTCDay())} dataSelecionada={data.getUTCDate()} />
 
       <Text style={styles.titulo}>TPM</Text>
       
-      <OpcaoContainer icone={Icones.tpm} cor={Cores.tpm}/>
+      <OpcaoContainer icone={Icones.tpm} cor={Cores.tpm} dataString={route.params} categoria="tipo_TPM"/>
       
     </SafeAreaView>
   );

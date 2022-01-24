@@ -6,7 +6,9 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Cores } from '../../assets/Cores';
 import { Icones } from '../../assets/Icones';
 
-const Categorias = ({data}) => { //recebe objeto Date
+const Categorias = ({dataString}) => { //recebe data no formato "2022-01-25"
+
+  console.log(dataString)
 
   const [ativa, setAtiva] = useState("");
   const navigation = useNavigation();
@@ -18,7 +20,7 @@ const Categorias = ({data}) => { //recebe objeto Date
         <View style={styles.containerBotoes}>
 
           <TouchableOpacity 
-            onPress={() => {setAtiva("Fluxo"), navigation.navigate('Fluxo', data)}}
+            onPress={() => {setAtiva("Fluxo"), navigation.navigate('Fluxo', dataString)}}
             style={[styles.botoesCategoria, {backgroundColor: ativa === "Fluxo"? Cores.sangueSelecionado : Cores.branco, borderColor: Cores.sangue}]}>
 
             <MaterialCommunityIcons name={Icones.sangue} size={60} color={Cores.sangue} />
@@ -28,7 +30,7 @@ const Categorias = ({data}) => { //recebe objeto Date
           <Text style={styles.labelCategoria}>Fluxo</Text>
           
           <TouchableOpacity 
-            onPress={() => {setAtiva("Dor"), navigation.navigate('Dor', data)}} 
+            onPress={() => {setAtiva("Dor"), navigation.navigate('Dor', dataString)}} 
             style={[styles.botoesCategoria, {backgroundColor: ativa === "Dor"? Cores.dorSelecionado : Cores.branco, borderColor: Cores.dor} ]}>
           
             <MaterialCommunityIcons name={Icones.dor} size={60} color={Cores.dor} />
@@ -38,7 +40,7 @@ const Categorias = ({data}) => { //recebe objeto Date
           <Text style={styles.labelCategoria}>Dor</Text>
           
           <TouchableOpacity
-            onPress={() => {setAtiva("TPM"), navigation.navigate('TPM', data)}} 
+            onPress={() => {setAtiva("TPM"), navigation.navigate('TPM', dataString)}} 
             style={[styles.botoesCategoria, {backgroundColor: ativa === "TPM"? Cores.tpmSelecionado : Cores.branco, borderColor: Cores.tpm}]}>
             <MaterialCommunityIcons name={Icones.tpm} size={60} color={Cores.tpm} />
           </TouchableOpacity>

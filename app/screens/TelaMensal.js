@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { CalendarList } from "react-native-calendars";
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, Alert, ActivityIndicator } from 'react-native';
 
 
 function TelaMensal() {
